@@ -27,7 +27,7 @@ FR_KEY = os.getenv('AZURE_KEY')
 
 # Initialize the Document Analysis Client
 document_analysis_client = DocumentAnalysisClient(
-    endpoint=FR_ENDPOINT, credential=AzureKeyCredential(FR_KEY)
+    endpoint=str(FR_ENDPOINT), credential=AzureKeyCredential(str(FR_KEY))
 )
 
 # Function to extract text from PDF
