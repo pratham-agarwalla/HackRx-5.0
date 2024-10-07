@@ -20,7 +20,7 @@ class CustomDocExtractor:
         # Initialize the Document Analysis Client
         self.document_analysis_client = DocumentAnalysisClient(
             endpoint=endpoint,
-            credential=AzureKeyCredential(api_key)
+            credential=AzureKeyCredential(str(api_key))
         )
 
     def analyze_document(self, document_data: bytes):
