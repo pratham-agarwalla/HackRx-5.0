@@ -1,6 +1,6 @@
 import io
 import os
-import stremlit as st
+import streamlit as st
 
 
 from azure.ai.formrecognizer import DocumentAnalysisClient
