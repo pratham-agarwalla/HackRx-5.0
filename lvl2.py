@@ -16,14 +16,14 @@ from backend import CustomDocExtractor
 load_dotenv('.env')
 
 # Azure OpenAI configurations
-AZURE_OPENAI_VERSION = st.openai_azure.AZURE_OPENAI_VERSION
-AZURE_OPENAI_ENDPOINT = st.openai_azure.AZURE_OPENAI_ENDPOINT
-AZURE_OPENAI_DEPLOYMENT = st.openai_azure.AZURE_OPENAI_DEPLOYMENT
-AZURE_OPENAI_API_KEY = st.openai_azure.AZURE_OPENAI_API_KEY
+AZURE_OPENAI_VERSION = st.secrets.openai_azure.AZURE_OPENAI_VERSION
+AZURE_OPENAI_ENDPOINT = st.secrets.openai_azure.AZURE_OPENAI_ENDPOINT
+AZURE_OPENAI_DEPLOYMENT = st.secrets.openai_azure.AZURE_OPENAI_DEPLOYMENT
+AZURE_OPENAI_API_KEY = st.secrets.openai_azure.AZURE_OPENAI_API_KEY
 
 # Azure Form Recognizer configurations
-FR_ENDPOINT = st.azure_document_intelligence.AZURE_ENDPOINT
-FR_KEY = st.azure_document_intelligence.AZURE_KEY
+FR_ENDPOINT = st.secrets.azure_document_intelligence.AZURE_ENDPOINT
+FR_KEY = st.secrets.azure_document_intelligence.AZURE_KEY
 
 # Initialize the Document Analysis Client
 document_analysis_client = DocumentAnalysisClient(
