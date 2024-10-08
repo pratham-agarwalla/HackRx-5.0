@@ -25,7 +25,7 @@ class CustomDocExtractor:
 
     def analyze_document(self, document_data: bytes):
         with io.BytesIO(document_data) as document_stream:
-            poller = self.document_analysis_client.begin_analyze_document(22, document_stream)
+            poller = self.document_analysis_client.begin_analyze_document(custom_model_id, document_stream)
             result = poller.result()
             list_of_extracted_tables = result.tables
             list_of_table_df = tables_to_dataframe(list_of_extracted_tables)
