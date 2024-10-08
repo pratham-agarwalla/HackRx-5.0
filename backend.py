@@ -10,17 +10,17 @@ from transform.table_processing import tables_to_dataframe
 load_dotenv()
 
 # Azure Form Recognizer credentials
-endpoint = os.getenv('AZURE_ENDPOINT')
-api_key = os.getenv('AZURE_KEY')
-custom_model_id = os.getenv('CUSTOM_AZURE_MODEL_ID')
+endpoint = st.azure_document_intelligence.AZURE.ENDPOINT
+api_key = st.azure_document_intelligence.AZURE_KEY
+custom_model_id = st.azure_document_intelligence.CUSTOM_AZURE_MODEL_ID
 
 
 class CustomDocExtractor:
     def __init__(self):
         # Initialize the Document Analysis Client
         self.document_analysis_client = DocumentAnalysisClient(
-            endpoint=str(endpoint),
-            credential=AzureKeyCredential(str(api_key))
+            endpoint=endpoint,
+            credential=AzureKeyCredential(api_key)
         )
 
     def analyze_document(self, document_data: bytes):
