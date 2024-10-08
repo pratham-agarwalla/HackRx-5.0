@@ -1,5 +1,7 @@
 import io
 import os
+import stremlit as st
+
 
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
