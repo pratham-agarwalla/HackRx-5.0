@@ -16,18 +16,18 @@ from backend import CustomDocExtractor
 load_dotenv('.env')
 
 # Azure OpenAI configurations
-AZURE_OPENAI_VERSION = os.getenv("AZURE_OPENAI_VERSION")
-AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
-AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
-AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY')
+AZURE_OPENAI_VERSION = st.openai_azure.AZURE_OPENAI_VERSION
+AZURE_OPENAI_ENDPOINT = st.openai_azure.AZURE_OPENAI_ENDPOINT
+AZURE_OPENAI_DEPLOYMENT = st.openai_azure.AZURE_OPENAI_DEPLOYMENT
+AZURE_OPENAI_API_KEY = st.openai_azure.AZURE_OPENAI_API_KEY
 
 # Azure Form Recognizer configurations
-FR_ENDPOINT = os.getenv('AZURE_ENDPOINT')
-FR_KEY = os.getenv('AZURE_KEY')
+FR_ENDPOINT = st.azure_document_intelligence.AZURE_ENDPOINT
+FR_KEY = st.azure_document_intelligence.AZURE_KEY
 
 # Initialize the Document Analysis Client
 document_analysis_client = DocumentAnalysisClient(
-    endpoint=str(FR_ENDPOINT), credential=AzureKeyCredential(str(FR_KEY))
+    endpoint=FR_ENDPOINT, credential=AzureKeyCredentialFR_KEY)
 )
 
 # Function to extract text from PDF
