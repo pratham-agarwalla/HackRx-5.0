@@ -10,9 +10,9 @@ from transform.table_processing import tables_to_dataframe
 load_dotenv()
 
 # Azure Form Recognizer credentials
-endpoint = st.azure_document_intelligence.AZURE.ENDPOINT
-api_key = st.azure_document_intelligence.AZURE_KEY
-custom_model_id = st.azure_document_intelligence.CUSTOM_AZURE_MODEL_ID
+endpoint = st.secrets.azure_document_intelligence.AZURE.ENDPOINT
+api_key = st.secrets.azure_document_intelligence.AZURE_KEY
+custom_model_id = st.secrets.azure_document_intelligence.CUSTOM_AZURE_MODEL_ID
 
 
 class CustomDocExtractor:
