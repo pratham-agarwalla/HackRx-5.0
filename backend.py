@@ -12,7 +12,7 @@ from transform.table_processing import tables_to_dataframe
 load_dotenv()
 
 # Azure Form Recognizer credentials
-endpoint = st.secrets.azure_document_intelligence.AZURE.ENDPOINT
+endpoint = st.secrets.azure_document_intelligence.AZURE_ENDPOINT
 api_key = st.secrets.azure_document_intelligence.AZURE_KEY
 custom_model_id = st.secrets.azure_document_intelligence.CUSTOM_AZURE_MODEL_ID
 
